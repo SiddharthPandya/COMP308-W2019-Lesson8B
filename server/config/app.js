@@ -97,6 +97,9 @@ passport.use(strategy);
 
 app.use('/api', indexRouter);
 app.use('/api/contact-list', contactRouter); // TODO - protect this section
+app.get('*',(req,res) => {
+  res.sendFile(path.join(__dirname,'../../public/index.html'));
+})
 
 //TODO - need to cpature random links or incorrect url information
 
